@@ -9,13 +9,6 @@ steps:
         "--cache-ttl=6h",
         "--destination=gcr.io/$PROJECT_ID/hello:$COMMIT_SHA"
       ]
-  # Push the image to Container Registry
-  - name: "gcr.io/cloud-builders/docker"
-    args:
-      [
-        "push",
-        "gcr.io/$PROJECT_ID/hello:$COMMIT_SHA",
-      ]
   # Deploy image to Cloud Run
   - name: "gcr.io/cloud-builders/gcloud"
     args:
