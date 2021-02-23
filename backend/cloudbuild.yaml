@@ -6,7 +6,8 @@ steps:
         "--dockerfile=./backend",
         "--context=dir://backend",
         "--cache=true",
-        "--cache-ttl=6h"
+        "--cache-ttl=6h",
+        "--destination=gcr.io/$PROJECT_ID/hello:$COMMIT_SHA"
       ]
   # Push the image to Container Registry
   - name: "gcr.io/cloud-builders/docker"
