@@ -3,7 +3,7 @@ steps:
   - name: 'gcr.io/kaniko-project/executor:latest'
     args:
       [
-        "--dockerfile=./backend",
+        "--dockerfile=./backend/.",
         "--context=dir://backend",
         "--cache=true",
         "--cache-ttl=6h",
